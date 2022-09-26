@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/logo5.png" type='image/png' />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Ashoka Institue of Science is one of the best institute in south Dobhi."
+    />
+    <meta name="keywords" content="Ashoka Institute of Science ,AIS,ashoka institute,ashokainstituteofscience.in,ashokainstituteofscience" />
+    <meta name="google-site-verification" content="O1Njy9R44T0bkGtmLc3PdR4vE4vss2fxJXFLV_wFhLU" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo5.png" type='image/png' /> -->
+    <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
+    <title>AIS</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script>
+      var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?64919';
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = url;
+      var options = {
+        "enabled": true,
+        "chatButtonSetting": {
+          "backgroundColor": "#4dc247",
+          "ctaText": "",
+          "borderRadius": "25",
+          "marginLeft": "0",
+          "marginBottom": "50",
+          "marginRight": "20",
+          "position": "right"
+        },
+        "brandSetting": {
+          "brandName": "ASHOKA INSTITUTE OF SCIENCE",
+          "brandSubTitle": "Typically replies within a day",
+          "brandImg": "logo5.png",
+          "welcomeText": "Hi, there!\nHow can I help you?",
+          "messageText": "",
+          "backgroundColor": "#0a5f54",
+          "ctaText": "Start Chat",
+          "borderRadius": "25",
+          "autoShow": false,
+          "phoneNumber": "919006519721"
+        }
+      };
+      s.onload = function () {
+        CreateWhatsappChatWidget(options);
+      };
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    </script>
+  </body>
+</html>
