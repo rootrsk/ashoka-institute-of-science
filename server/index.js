@@ -25,7 +25,7 @@ app.use((req,res,next)=>{
 
 
 app.use(userRouter)
-app.use(adminRouter)
+app.use('/api/admin',adminRouter)
 db.connect()
 app.listen(PORT,()=>{
     console.log(`Server started at port ${PORT}`)

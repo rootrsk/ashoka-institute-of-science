@@ -1,0 +1,72 @@
+.custom-input{
+
+}
+.input_wrapper{
+    width: 100%;
+    // background: gray;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    label{
+        display: block;
+    }
+    input{
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid rgb(206, 212, 218);
+        min-width: max-content;
+        padding: 10px 34px 10px 12px;
+        font-size: 18px;
+        flex: 1;
+    }
+    .error{
+        position: absolute;
+        right: 5px;
+        top: 28px;
+        color: red;
+        visibility: hidden;
+        display: none;
+    }
+    .success{
+        color : rgb(11, 209, 31);
+        position: absolute;
+        right: 5px;
+        top: 28px;
+        visibility: hidden;
+        display: none;
+    }
+    .error_message{
+        color: red;
+        visibility: hidden;
+        display: none;
+    }
+
+    
+    input:invalid[focused="true"] ~.error{
+        visibility: visible;
+        display: block;
+        
+    }
+    input:invalid[focused="true"] ~.error_message{
+        visibility: visible;
+        display: block;
+    }
+    
+    input:valid[focused="true"] ~.success{
+        visibility: visible;
+        display: block;
+    }
+    input:valid[value=""] ~.success{
+        display: none;
+    }
+
+
+    // input:invalid[focused="true"] ~ .error_new {
+    //     display: block;
+    // }
+    
+    // input:invalid[focused="true"] ~ .success_new {
+    //     display: none;
+    // }
+
+}

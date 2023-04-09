@@ -1,5 +1,5 @@
 import axios from 'axios'
-axios.defaults.baseURL = 'http://192.168.43.209:3001/api'
+axios.defaults.baseURL = 'http://localhost:3001/api'
 
 export const getApi = async({url,params,headers})=>{
     try {

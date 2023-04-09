@@ -1,0 +1,42 @@
+
+.notification-card{
+    padding: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    .notification-icons{
+        padding: 0px 0px 0px 10px;
+    }
+    margin: 10px 0px;
+    align-items: center;
+    border-radius: 5px;
+    -webkit-box-shadow: 2px 2px 15px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 15px -3px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 15px -3px rgba(0,0,0,0.75);
+
+}
+.notification-description{
+    // flex: 1;
+    text-align: justify;
+}
+.notification-icons{
+    svg:first-child{
+        color: rgb(0, 56, 135);
+    }
+    
+}
+
+.notification_form{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+}

@@ -3,7 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 function Carousels() {
     return (
-        <Carousel autoPlay className='form' infiniteLoop>
+        <Carousel autoPlay className='form carousel' infiniteLoop>
             <div>
                 <img alt="" src="https://i.ibb.co/ryR2T4W/IMG-20210627-WA0015.jpg" />
             </div>
