@@ -17,6 +17,7 @@ const adminAuthSlice = createSlice({
         },
         authenticateUser(state,{payload}){
             console.log(payload)
+            localStorage.setItem("authToken",payload?.token)
             state.error = null
             state.user = payload?.user
             state.isAuthenticated = true

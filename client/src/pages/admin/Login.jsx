@@ -7,56 +7,30 @@ import LoadingButton from '../../components/UI/button/LoadingButton'
 
 import { loginAccount } from '../../api/AdminApi'
 import { adminAuthenticationFailed, authenticateUser, initateAuthentication } from '../../redux/reducers/adminAuth'
+import userLoginInput from 'utils/data/userLoginInput'
+import { useAuthenticateAdminAccountMutation } from 'redux/reducers/authApi'
 
 function Login() {
     const auth = useSelector(state=>state?.adminAuth)
     const dispatch = useDispatch()
-    const [user,setUser] = useState({
-        email:{
-            name:'email',
-            label:'Email',
-            type:'email',
-            value:'rootrsk',
-            required:true,
-            
-        },
-        password:{
-            name: 'password',
-            type:'password',
-            label:'Password',
-            value:'rootrsk',
-            required: true,
-            
-        }
-    })
+    const [user,setUser] = useState({...userLoginInput})
+    const [loginAdmin ,{ isLoading }] = useAuthenticateAdminAccountMutation()
     const changeHandler = ({target:{name,value}})=>{
-        console.log(name,value)
         user[name].value = value
         setUser(p=>({...p}))
-        // console.log(e)
     }
-    
-    
-    console.log(auth)
     const loginHandler = async()=>{
-        dispatch(initateAuthentication())
-        const {data,error} = await loginAccount({
-            body:{
-                username:user.email.value,
-                password:user.password.value
-            }
+        const { data } = await loginAdmin({
+            username:user.email.value,
+            password:user.password.value
         })
-        console.log(data,error)
-        if(error){
-            return dispatch(adminAuthenticationFailed({error}))
-        }
-        dispatch(authenticateUser(data))
+        if(data?.token)dispatch(authenticateUser(data))
     }
     useEffect(()=>{
-        // login()
     },[])
     return (
         <div className='login_page'>
+            
             <div className="main-container">
                 <h2>Admin Login</h2>
                 <div className="login-inputs">
@@ -71,7 +45,7 @@ function Login() {
                     />
                     <span className='login-error'>{auth?.error}</span>
                     {
-                        auth?.isAuthenticating
+                        isLoading
                         ?
                         <LoadingButton />:
                         <Button 

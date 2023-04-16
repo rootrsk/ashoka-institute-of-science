@@ -1,5 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,900&family=Solway:wght@300;400;500;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "base/font";
+@import "base/global";
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "layouts/footer";
+@import "layouts/toast";
+@import "layouts/scrollbar";
+@import "layouts/model";
+@import "base/reset";
+@import "components/input";
+@import "components/loader";
+
+:root {
+  --poppins: "Poppins", sans-serif;
+  --inter: "Inter", sans-serif;
+  --lato: "Lato", sans-serif;
+  --allura: "Allura", cursive;
+  --handlee: "Handlee", cursive;
+  --kristi: "Kristi", cursive;
+  --aurore: "La Belle Aurore", cursive;
+  --reenie: "Reenie Beanie", cursive;
+  --satisfy: "Satisfy", cursive;
+  --shadows: "Shadows Into Light Two", cursive;
+  --zeyada: "Zeyada", cursive;
+
+  --sign-font-grey: #555;
+  --sign-font-red: #dc3545;
+  --sign-font-blue: #007bff;
+  --sign-font-green: #28a745;
+}
+
+
+
 
 
 .grey{
@@ -720,3 +751,6 @@ footer{
     background-color: white;
     border-radius: 2px;
 }
+
+
+

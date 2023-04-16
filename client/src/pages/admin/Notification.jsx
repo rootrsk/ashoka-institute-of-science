@@ -1,28 +1,42 @@
-import React,{ useState } from 'react'
+import React,{ useEffect, useState } from 'react'
 import NotificationCard from '../../components/admin/notification/NotificationCard'
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { Box, Button, Fab, TextField } from '@mui/material';
 import Modal from '@mui/material/Modal';
 import './Notification.scss'
 import NotificationForm from '../../components/admin/notification/NotificationForm';
+import { useGetNotificationQuery } from 'api/admin/notificationApi';
+import Loader from 'components/UI/loading/Loader';
+import WatchLoader from 'components/UI/loading/WatchLoader';
+import NotificationLoader from 'components/UI/loading/NotificationLoader';
 function Notification() {
-    const notifications=['Tution will be closed on saturday on 25 of aggest']
     const [loading,setLoading] = useState(false)
     const [notificationModal,setNotificationModal] = useState(false)
+    const [notifications,setNotifications] = useState([])
     const  notificationDeleteHandler = async()=>{
         
     }
     const createNotificationHandler = async()=>{
-        setLoading(true)
-        
-        setLoading(false)
     }
-
+    const { data: notificationResponseData, isFetching } = useGetNotificationQuery()
+    useEffect(()=>{
+        console.log(notificationResponseData)
+        setNotifications(notificationResponseData?.notifications ?? [])
+    },[notificationResponseData])
     return (
         <div>
-            <NotificationCard title={notifications[0]} />
-            <NotificationCard title={notifications[0]} />
-            <NotificationCard title={notifications[0]} />
+            {/* <Loader /> */}
+            {/* <WatchLoader /> */}
+            <NotificationLoader isLoading={isFetching} count={15} />
+            {
+                notifications?.map((notification)=>{
+                    return (
+                        <NotificationCard
+                            {...notification}
+                        />    
+                    )
+                })
+            }
             <Fab sx={{right:10,position:'fixed',bottom:100}} 
                 onClick={()=>setNotificationModal(true)}
             >

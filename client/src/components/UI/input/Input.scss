@@ -9,20 +9,23 @@
     flex-direction: column;
     label{
         display: block;
+        font-weight: 600;
+        color: #413f3f;
     }
     input{
         outline: none;
         border-radius: 5px;
         border: 1px solid rgb(206, 212, 218);
         min-width: max-content;
-        padding: 10px 34px 10px 12px;
+        padding: 10px 34px 10px 18px;
         font-size: 18px;
         flex: 1;
     }
     .error{
         position: absolute;
         right: 5px;
-        top: 28px;
+        // top: 28px;
+        bottom: 4px;
         color: red;
         visibility: hidden;
         display: none;
@@ -31,9 +34,10 @@
         color : rgb(11, 209, 31);
         position: absolute;
         right: 5px;
-        top: 28px;
+        // top: 28px;
         visibility: hidden;
         display: none;
+        bottom: 4px;
     }
     .error_message{
         color: red;

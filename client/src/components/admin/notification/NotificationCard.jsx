@@ -6,7 +6,7 @@ function NotificationCard({title}) {
     return (
         <div className='notification-card'>
             
-            <div className='notification-description'>
+            <div className='notification-title'>
                 {title}
             </div>
             <div className='notification-icons'>

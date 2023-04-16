@@ -1,10 +1,25 @@
 const express = require('express')
-const User = require('../models/test')
 const router = new express.Router()
-const {trainErrorHandler} = require('../middleware/error')
-const { signupHandler, loginHandler } = require('../controllers/admin')
+const adminAuth = require('../middleware/adminAuth')
 
-router.post('/signup',signupHandler)
+const { 
+    loginHandler, 
+    signupHandler,
+    getNotification,
+    updateNotification,
+    createNotification,
+    deleteNotification
+} = require('../controllers/admin')
+
+
+
 router.post('/login',loginHandler)
+router.post('/signup',signupHandler)
+
+
+router.get('/notification', adminAuth, getNotification)
+router.post('/notification', adminAuth, createNotification)
+router.patch('/notification', adminAuth, updateNotification)
+router.delete('/notification' ,adminAuth, deleteNotification)
 
 module.exports = router

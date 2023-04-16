@@ -22,11 +22,12 @@ app.use((req,res,next)=>{
     next()
 })
 
-
-
 app.use(userRouter)
-app.use('/api/admin',adminRouter)
+app.use('/api/admin',adminRouter)   
+
 db.connect()
 app.listen(PORT,()=>{
     console.log(`Server started at port ${PORT}`)
 })
+
+module.export = app

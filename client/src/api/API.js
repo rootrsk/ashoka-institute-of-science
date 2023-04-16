@@ -1,6 +1,10 @@
 import axios from 'axios'
 axios.defaults.baseURL = 'http://localhost:3001/api'
 
+
+
+export const baseURL = 'http://localhost:3001/api'
+
 export const getApi = async({url,params,headers})=>{
     try {
         const resData = await axios({
@@ -90,3 +94,33 @@ export const deleteApi = async({url,params,headers,data})=>{
         }
     }
 }
+
+
+
+// Create a new Axios instance
+const API = axios.create({
+  baseURL
+});
+
+API.interceptors.request.use(
+    function (config) {
+        config.headers.Authorization = `${localStorage.getItem('authToken')}`;
+        return config;
+    },
+    function (error) {
+        console.log(error)
+        return Promise.reject(error);
+    }
+);
+
+API.interceptors.response.use(
+    function (response) {
+        return response;
+    },
+    function (error) {
+        console.log(error)
+        return Promise.reject(error);
+    }
+);
+  
+export default API

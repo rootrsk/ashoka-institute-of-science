@@ -7,7 +7,7 @@ function Input({label,name,type='text',error,required,pattern,onChange,value,pla
     const [focused,setFocused] = useState("false")
     return (
         <div className='input_wrapper'>
-            <label htmlFor={name}>{label} { <span style={{color:'red'}}>*</span>}</label>
+            <label htmlFor={name}>{label} {required && <span style={{color:'red'}}>*</span>}</label>
             <input 
                 type={type} 
                 name={name}
