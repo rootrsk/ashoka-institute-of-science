@@ -1,9 +1,11 @@
 import axios from 'axios'
 axios.defaults.baseURL = 'http://localhost:3001/api'
+axios.defaults.baseURL = 'https://rootrsk-ais-server.vercel.app/'
+// 
 
+const urls = ["http://localhost:3001/api","https://rootrsk-ais-server.vercel.app/api"]
 
-
-export const baseURL = 'http://localhost:3001/api'
+export const baseURL = urls[0]
 
 export const getApi = async({url,params,headers})=>{
     try {
