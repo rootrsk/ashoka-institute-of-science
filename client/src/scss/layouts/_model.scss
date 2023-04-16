@@ -18,10 +18,19 @@
     .modal-body{
         padding: 20px 15px;
     }
+    .confirm-modal-body{
+        padding: 100px 15px;
+        font-weight: 700;
+        text-align: center;
+    }
     .modal-footer{
         padding: 10px 15px;
         border-top: 1px solid #868282c4;
         min-height: 40px;
+    }
+    .confirm-modal-footer{
+        display: flex;
+        justify-content: space-between;
     }
 }   
 .small{
@@ -40,3 +49,5 @@
     width: 90%;
     max-width: 2000px;
 }
+
+

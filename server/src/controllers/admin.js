@@ -96,7 +96,6 @@ const updateNotification = async(req,res,next)=>{
         notification.updated_by = req.user._id
         await notification.save()
         res.status(200).json({
-            notifications,
             message: "Notification updated Successfully"
         })
     } catch (error) {
@@ -114,7 +113,6 @@ const deleteNotification = async(req,res,next)=>{
         })
         await Notification.findByIdAndRemove(req.body._id)
         res.status(200).json({
-            notifications,
             message: "Notification created Successfully"
         })
     } catch (error) {

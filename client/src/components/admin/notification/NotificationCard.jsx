@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import { Button, IconButton } from '@mui/material';
-function NotificationCard({title}) {
+import { Button, CircularProgress, IconButton } from '@mui/material';
+import { useDeleteNotificationMutation } from 'api/admin/notificationApi';
+import ConfirmModal from 'components/UI/modal/ConfirmModal';
+function NotificationCard({title,_id}) {
+    const [deleteNotification,{ isLoading }]= useDeleteNotificationMutation()
+    const [confirmModal,setConfirmModal] = useState(false)
+    const deleteHandler = async()=>{
+        console.log(_id)
+        deleteNotification({_id})
+    }
     return (
         <div className='notification-card'>
             
@@ -10,14 +18,27 @@ function NotificationCard({title}) {
                 {title}
             </div>
             <div className='notification-icons'>
-                <IconButton variant='contained'>
-                    <DeleteIcon />
+                <IconButton variant='contained' onClick={()=>setConfirmModal(true)}>
+                    
+                    {
+                        isLoading ? 
+                        <CircularProgress className='loading-button-progres' />:
+                        <DeleteIcon /> 
+                    }
+                    
                 </IconButton>
                 <IconButton variant='outlined'>
-                    <EditIcon />
+                    <EditIcon />    
                 </IconButton>    
             </div>
-            
+            <ConfirmModal
+                title="Delete Alert"
+                open={confirmModal}
+                onClose={()=>setConfirmModal(false)}
+                message="Confirm if you want to delete it."
+                onCancel={()=>{}}
+                onConfirm={deleteHandler}
+            />
         </div>
     )
 }
