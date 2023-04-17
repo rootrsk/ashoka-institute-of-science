@@ -2,22 +2,19 @@ import React from 'react'
 import Input from 'components/UI/input/Input'
 import Modal from 'components/UI/modal/Modal';
 import Button from 'components/UI/button/Button';
-import batchInput from 'utils/data/batchInput';
+import teacherInput from 'utils/data/teacherInput';
 import { useState } from 'react';
 
 const INITIAL_STATE = {
-    title:"",
-    monthly_fee: 0,
-    start_date:"",
-    end_date:"",
-    start_time:"",
-    end_time:"",
-    standard:""
+    email:"",
+    userName:""
 }
 
-function AddBatch({open,onClose}) {
+function TeacherForm({open,onClose}){
     const [loading,setLoading] = useState(false)
     const [formData,setFormData] = useState({...INITIAL_STATE})
+
+
     const changeHandler = (e)=>{
         const value = e.target.value
         const name = e.target.name
@@ -25,25 +22,24 @@ function AddBatch({open,onClose}) {
         formData[name] = value
         setFormData({...formData})
     }
-    const createBatchHandler = async()=>{
+    const createTeacherHandler = async()=>{
         console.table(formData)
     }
-   
-   
+
     return (
         <div>
             {console.log(formData)}
             <Modal
                 open={open}
                 onClose={()=>onClose(false)}
-                title="Add Batch"
+                title="Add Teacher"
                 size="md"
                 footer={
                     <>
                         <Button 
                             variant='contained' 
                             // isCreateLoading={isCreateLoading}
-                            onClick={createBatchHandler}
+                            onClick={createTeacherHandler}
                         >
                             Add New
                         </Button>
@@ -52,7 +48,7 @@ function AddBatch({open,onClose}) {
             >
                 <form className="notification_form">
                     {
-                        Object.entries(batchInput)?.map(([k,v])=>(
+                        Object.entries(teacherInput)?.map(([k,v])=>(
                             <Input
                                 key={k}
                                 {...v}
@@ -93,6 +89,7 @@ function AddBatch({open,onClose}) {
             </Modal>
         </div>
     )
-}
 
-export default AddBatch
+} 
+export default TeacherForm
+

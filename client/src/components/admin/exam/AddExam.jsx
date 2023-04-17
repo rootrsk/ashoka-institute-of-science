@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Input from '../../UI/input/Input'
 import Select from '../../UI/input/Select'
-import inputFields from './inputFiels'
+import inputFields from './inputField'
 function AddExam() {
     const [examInputFields,setExamInputFields] = useState(inputFields)
     const onInputChange = ({target:{name,value}})=>{
