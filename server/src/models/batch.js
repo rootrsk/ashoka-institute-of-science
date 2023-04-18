@@ -1,6 +1,6 @@
 const { Schema, model, SchemaTypes }  = require('mongoose')
 
-const subjectSchema = new Schema({
+const batchSchema = new Schema({
     title:{
         type: String,
         required:true,
@@ -37,12 +37,12 @@ const subjectSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref:"Teacher"
     }],
-    subject:[{
+    subjects:[{
         type: Schema.Types.ObjectId,
         ref:"Subject"
     }]
 },{timestamps:true})
 
-const Subject = model('Subject',subjectSchema)
+const Batch = model('Batch',batchSchema)
 
-module.exports = Subject
+module.exports = Batch

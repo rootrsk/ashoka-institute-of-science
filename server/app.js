@@ -25,7 +25,7 @@ app.use((req,res,next)=>{
     next()
 })
 
-app.use(userRouter)
+app.use('/api/user',userRouter)
 app.use('/api/admin',adminRouter)   
 
 db.connect()

@@ -1,4 +1,4 @@
-const Admin = require('../models/admin')
+const User = require('../models/user')
 const Batch = require('../models/batch')
 const Notification = require('../models/notification')
 const Subject = require('../models/subject')
@@ -6,17 +6,18 @@ const Teacher = require('../models/teacher')
 
 const signupHandler = async(req,res,next)=>{
     try {
-        const admin = await new Admin({
+        const user = await new User({
             username:req.body.username,
             fullname:req.body.fullname,
             password:req.body.password,
             email: req.body.email,
             contact_no: req.body.contact_no
         })
-        console.log(admin)
-        await admin.save()
+        console.log(user)
+        await user.save()
         res.json({
-            admin
+            user,
+            message:"Account Created Successfully"
         })
     } catch (error) {
         res.json({
@@ -34,7 +35,7 @@ const loginHandler = async(req,res,next)=>{
                 error:'Email or Username and Password is required.'
             })
         }
-        const {user,error} = await Admin.findByCredentials(username,password)
+        const {user,error} = await User.findByCredentials(username,password)
     
         if(error){
             return res.json({

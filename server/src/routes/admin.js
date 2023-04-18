@@ -19,7 +19,12 @@ const {
     createTeacher,
     updateTeacher,
     deleteTeacher,
-    getOptionData
+    getOptionData,
+
+    getBatch,
+    createBatch,
+    updateBatch,
+    deleteBatch,
 } = require('../controllers/admin')
 
 
@@ -43,6 +48,11 @@ router.get('/teacher', adminAuth, getTeacher)
 router.post('/teacher', adminAuth, createTeacher)
 router.patch('/teacher', adminAuth, updateTeacher)
 router.delete('/teacher' ,adminAuth, deleteTeacher)
+
+router.get('/batch', adminAuth, getBatch)
+router.post('/batch', adminAuth, createBatch)
+router.patch('/batch', adminAuth, updateBatch)
+router.delete('/batch' ,adminAuth, deleteBatch)
 
 router.get('/option-data' ,adminAuth, getOptionData)
 

@@ -2,7 +2,37 @@ const express = require('express')
 const User = require('../models/user')
 const router = new express.Router()
 const userAuth = require('../middleware/userAuth')
-const {userErrorHandler} = require('../middleware/error')
+
+const { 
+    loginHandler, 
+    signupHandler,
+    getNotification,
+    updateNotification,
+    createNotification,
+    deleteNotification,
+
+    getSubject,
+    createSubject,
+    updateSubject,
+    deleteSubject,
+
+    getTeacher,
+    createTeacher,
+    updateTeacher,
+    deleteTeacher,
+    getOptionData,
+
+    getBatch,
+    createBatch,
+    updateBatch,
+    deleteBatch,
+} = require('../controllers/user')
+
+
+
+router.post("/login",loginHandler)
+router.post("/signup",signupHandler)
+
 
 router.get('/',(req,res)=>{
     res.send({
