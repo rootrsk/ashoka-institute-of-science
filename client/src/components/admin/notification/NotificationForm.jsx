@@ -7,6 +7,7 @@ import { useCreateNotificationMutation } from 'api/admin/notificationApi';
 import Input from 'components/UI/input/Input'
 import Modal from 'components/UI/modal/Modal';
 import Button from 'components/UI/button/Button';
+import SearchSelect from 'components/UI/input/SearchSelect';
 
 function NotificationForm({show,onHide}) {
     const [title,setTitle] = useState("")
@@ -42,6 +43,13 @@ function NotificationForm({show,onHide}) {
                         label="Title"
                         value={title}
                         onChange={(e)=>setTitle(e.target.value)}
+                    />
+                    <SearchSelect
+                        label="Teachers"
+                        options={[{label:"Ravishankar",value:"1"}]}
+                        isMulti
+                        defaultValue={[{label:"Ravishankar",value:"1"}]}
+                        onChange={(e)=>console.log(e)}
                     />
                 </form>
             </Modal>

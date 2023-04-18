@@ -1,9 +1,6 @@
-.custom-input{
 
-}
 .input_wrapper{
     width: 100%;
-    // background: gray;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -25,7 +22,7 @@
         position: absolute;
         right: 5px;
         // top: 28px;
-        bottom: 4px;
+        bottom: 27px;
         color: red;
         visibility: hidden;
         display: none;
@@ -44,7 +41,6 @@
         visibility: hidden;
         display: none;
     }
-
     
     input:invalid[focused="true"] ~.error{
         visibility: visible;
@@ -72,5 +68,17 @@
     // input:invalid[focused="true"] ~ .success_new {
     //     display: none;
     // }
+    .search-select{
+        input{
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid rgb(206, 212, 218);
+            min-width: max-content;
+            padding: .2rem !important;
+            font-size: 18px;
+            flex: 1;
+
+        }
+    }
 
 }

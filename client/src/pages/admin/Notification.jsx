@@ -14,18 +14,19 @@ function Notification() {
     }
     const createNotificationHandler = async()=>{
     }
-    const { data: notificationResponseData, isFetching } = useGetNotificationQuery()
+    const { data: notificationResponseData, isLoading } = useGetNotificationQuery()
     useEffect(()=>{
         console.log(notificationResponseData)
         setNotifications(notificationResponseData?.notifications ?? [])
     },[notificationResponseData])
     return (
         <div>
-            <NotificationLoader isLoading={isFetching} count={15} />
+            <NotificationLoader isLoading={isLoading} count={15} />
             {
                 notifications?.map((notification)=>{
                     return (
                         <NotificationCard
+                            key={notification._id}
                             {...notification}
                         />    
                     )

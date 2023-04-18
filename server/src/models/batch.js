@@ -11,40 +11,36 @@ const subjectSchema = new Schema({
         enum:['Compulsory','Additional','Optional'],
         default:'Compulsory'
     },
-    has_pratical:{
-        type: Boolean,
-        default:false,
-        required:true
-    },
-    full_marks:{
-        type:Number,
-        default: 100,
-        required:true
-    },
-    pass_marks:{
-        type:Number,
-        default: 30,
-        required:true
-    },
-    pratical_marks:{
-        type: Number,
-        default: 0
-    },
-    theory_marks:{
-        type: Number,
-        defalult: 100,
-    },
-    standard:{
+    start_time:{
         type: String,
+        default:false,
     },
-    created_by:{
-        type: Schema.Types.ObjectId,
-        ref:"Admin"
+    end_time:{
+        type: String,
+        default:false,
     },
+    start_date:{
+        type: Date,
+    },
+    end_date:{
+        type: Date,
+    },
+    monthly_fee:{
+        type: Number,
+    },
+
     updated_by:{
         type: Schema.Types.ObjectId,
         ref:"Admin"
-    }
+    },
+    teachers:[{
+        type: Schema.Types.ObjectId,
+        ref:"Teacher"
+    }],
+    subject:[{
+        type: Schema.Types.ObjectId,
+        ref:"Subject"
+    }]
 },{timestamps:true})
 
 const Subject = model('Subject',subjectSchema)

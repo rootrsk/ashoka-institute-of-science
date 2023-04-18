@@ -8,11 +8,12 @@ const notificationSchema = new mongoose.Schema({
       unique: true,
     },
     created_by: {
-      type: mongoose.SchemaTypes.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: true,
     },
     updated_by: {
-      type: mongoose.SchemaTypes.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
+      ref:"Admin"
     }
 },{timestamps:true})
 

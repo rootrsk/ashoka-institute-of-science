@@ -7,7 +7,7 @@ function NotificationLoader({count=15,isLoading}) {
         <div className='notification-loader'>
             {
                 nums.map(num=>(
-                    <div className="notification-card">
+                    <div className="notification-card" key={num}>
                         <Skeleton width={"100%"} height={35}/>
                     </div>    
                 ))            

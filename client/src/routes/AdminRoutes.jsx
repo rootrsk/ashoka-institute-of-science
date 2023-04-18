@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import DashboardLayout from '../components/admin/AdminDashboardLayout'
+import DashboardLayout from '../components/admin/layout/AdminDashboardLayout'
 import Dashboard from '../pages/admin/Dashboard'
 import { useSelector} from 'react-redux'
 import Login from '../pages/admin/Login'
