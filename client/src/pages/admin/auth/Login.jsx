@@ -3,10 +3,10 @@ import { InfinitySpin, LineWave } from 'react-loader-spinner'
 import React, { useState, useEffect } from 'react'
 import './Login.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import LoadingButton from '../../components/UI/button/LoadingButton'
+import LoadingButton from '../../../components/UI/button/LoadingButton'
 
-import { loginAccount } from '../../api/AdminApi'
-import { adminAuthenticationFailed, authenticateUser, initateAuthentication } from '../../redux/reducers/adminAuth'
+import { loginAccount } from '../../../api/AdminApi'
+import { adminAuthenticationFailed, authenticateUser, initateAuthentication } from '../../../redux/reducers/adminAuth'
 import userLoginInput from 'utils/data/userLoginInput'
 import { useAuthenticateAdminAccountMutation } from 'redux/reducers/authApi'
 

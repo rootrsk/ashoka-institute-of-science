@@ -20,7 +20,7 @@ function Notification() {
         setNotifications(notificationResponseData?.notifications ?? [])
     },[notificationResponseData])
     return (
-        <div>
+        <div className="notification-page">
             <NotificationLoader isLoading={isLoading} count={15} />
             {
                 notifications?.map((notification)=>{
@@ -32,7 +32,7 @@ function Notification() {
                     )
                 })
             }
-            <Fab sx={{right:10,position:'fixed',bottom:100}} 
+            <Fab sx={{right:20,position:'fixed',bottom:30}} 
                 onClick={()=>setNotificationModal(true)}
             >
                 <AddCircleIcon />

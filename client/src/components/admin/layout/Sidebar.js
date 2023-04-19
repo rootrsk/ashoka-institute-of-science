@@ -6,6 +6,11 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import SlideshowIcon from '@mui/icons-material/Slideshow';
 import EmailIcon from '@mui/icons-material/Email';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import SchoolIcon from '@mui/icons-material/School';
+import CoPresentIcon from '@mui/icons-material/CoPresent';
+import BurstModeIcon from '@mui/icons-material/BurstMode';
+import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList';
 import { NavLink } from 'react-router-dom';
 function Sidebar() {
     const [open,setOpen] = useState(false)
@@ -33,6 +38,15 @@ function Sidebar() {
                     </NavLink>
                     <NavLink to='/admin/chat' className="sidebar-it-wrapper">
                         <ChatIcon className='sidebar-icon'/> <span>Chat</span>
+                    </NavLink>
+                    <NavLink className="sidebar-it-wrapper" to='/admin/batch'>
+                        <FeaturedPlayListIcon className='sidebar-icon'  /> <span>Batches</span>
+                    </NavLink>
+                    <NavLink className="sidebar-it-wrapper" to='/admin/subject'>
+                        <AutoStoriesIcon className='sidebar-icon'  /> <span>Subjects</span>
+                    </NavLink>
+                    <NavLink className="sidebar-it-wrapper" to='/admin/teacher'>
+                        <CoPresentIcon className='sidebar-icon'  /> <span>Teachers</span>
                     </NavLink>
                     <NavLink className="sidebar-it-wrapper" to='/admin/notification'>
                         <NotificationsActiveIcon className='sidebar-icon'  /> <span>Notifications</span>

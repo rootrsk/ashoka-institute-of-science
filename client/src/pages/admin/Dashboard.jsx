@@ -14,9 +14,9 @@ function Dashboard() {
                 open={true}
             />  } */}
 
-            <TeacherForm
+            {/* <TeacherForm
                  open={true}
-            />
+            /> */}
 
             {/* {
                 <SubjectForm
