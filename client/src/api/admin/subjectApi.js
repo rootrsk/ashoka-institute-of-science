@@ -34,6 +34,14 @@ export const subjectApi = api.injectEndpoints({
             }),
             invalidatesTags:["Batch"]
         }),
+        getOptionData: builder.query({
+            query: (params)=>({
+                url:"/admin/admin/subject",
+                method:"get",
+                params,
+            }),
+            providesTags: ['Batch'],
+        }),
     }),
 });
   
@@ -42,5 +50,6 @@ export const {
     useCreateSubjectMutation,
     useUpdateSubjectMutation,
     useDeleteSubjectMutation,
+    useGetOptionDataQuery,
 } = subjectApi;
   
