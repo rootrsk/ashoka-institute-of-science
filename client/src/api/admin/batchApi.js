@@ -34,6 +34,14 @@ export const batchApi = api.injectEndpoints({
             }),
             invalidatesTags:["Batch"]
         }),
+        getOptionData: builder.query({
+            query: (params)=>({
+                url:"/admin/option-data",
+                method:"get",
+                params,
+            }),
+            providesTags: ['Batch'],
+        }),
     }),
 });
   
@@ -42,5 +50,6 @@ export const {
     useCreateBatchMutation,
     useUpdateBatchMutation,
     useDeleteBatchMutation,
+    useGetOptionDataQuery,
 } = batchApi;
   

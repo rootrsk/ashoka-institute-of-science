@@ -1,10 +1,13 @@
 export default{
-    userName:{
-        name:'userName',
-        label:'Username',
+   
+   
+    full_name:{
+        name:'full_name',
+        label:'Full Name',
         type:'text',
         required:true,
-        pattern:"^[a-zA-Z0-9_]{3,10}$"
+        // pattern:"^.{3,40}$"
+        
 
     },
     

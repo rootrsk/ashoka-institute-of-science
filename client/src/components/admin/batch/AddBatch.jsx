@@ -1,9 +1,12 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect } from 'react'
 import Input from 'components/UI/input/Input'
 import Modal from 'components/UI/modal/Modal';
 import Button from 'components/UI/button/Button';
 import batchInput from 'utils/data/batchInput';
 import { useState } from 'react';
+import SearchSelect from 'components/UI/input/SearchSelect';
+import { useGetOptionDataQuery, useCreateBatchMutation } from 'api/admin/batchApi';
 
 const INITIAL_STATE = {
     title:"",
@@ -12,12 +15,16 @@ const INITIAL_STATE = {
     end_date:"",
     start_time:"",
     end_time:"",
-    standard:""
+    standard:"",
+    teachers:[],
+    subjects:[]
 }
 
 function AddBatch({open,onClose}) {
     const [loading,setLoading] = useState(false)
-    const [formData,setFormData] = useState({...INITIAL_STATE})
+    const [formData,setFormData] = useState({...INITIAL_STATE});
+    const [optionData,setOptionData] = useState({teachers: [],subjects:[]})
+
     const changeHandler = (e)=>{
         const value = e.target.value
         const name = e.target.name
@@ -25,14 +32,32 @@ function AddBatch({open,onClose}) {
         formData[name] = value
         setFormData({...formData})
     }
+
     const createBatchHandler = async()=>{
-        console.table(formData)
+        console.log(formData)
+        createBatch(formData)
     }
-   
-   
+    const searchChangeHandler= (name,value)=>{
+        console.log(value?.map(obj => obj.value))
+        formData[name] = value?.map(obj => obj.value) ?? []
+        setFormData(p=>({...p}))
+    }
+    const{ data: optionDataResponse, isLoading: isOptionsLoading}= useGetOptionDataQuery({
+        teachers:true,subjects:true
+    })
+
+    const [ createBatch, { isLoading: isCreateLoading} ] = useCreateBatchMutation()
+    useEffect(()=>{
+        setOptionData({
+            teachers:optionDataResponse?.optionsData?.teachers?.
+            map(teacher=>({label:teacher.full_name,value:teacher._id})),
+            subjects:optionDataResponse?.optionsData?.subjects?.
+            map(subject=>({label:subject.title,value:subject._id}))
+        })
+    },[optionDataResponse])
     return (
         <div>
-            {console.log(formData)}
+            {console.log(optionDataResponse)}
             <Modal
                 open={open}
                 onClose={()=>onClose(false)}
@@ -88,7 +113,21 @@ function AddBatch({open,onClose}) {
                      <Input
                        {...batchInput.end_time }
                        onChange={changeHandler}
-                    /> */}
+                    /> */
+                    }
+                    <SearchSelect
+                        label="Subjects"
+                        options={optionData.subjects}
+                        isMulti
+                        onChange={(e)=>searchChangeHandler("subjects",e)}
+                    />
+
+                    <SearchSelect
+                        label="Teachers"
+                        options={optionData.teachers}
+                        isMulti
+                        onChange={(e)=>searchChangeHandler("teachers",e)}
+                    />
                 </form>
             </Modal>
         </div>

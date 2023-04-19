@@ -4,10 +4,11 @@ import Modal from 'components/UI/modal/Modal';
 import Button from 'components/UI/button/Button';
 import teacherInput from 'utils/data/teacherInput';
 import { useState } from 'react';
+import { useCreateTeacherMutation } from 'api/admin/teacherApi';
 
-const INITIAL_STATE = {
+const INITIAL_STATE = {  
+    userName:"",
     email:"",
-    userName:""
 }
 
 function TeacherForm({open,onClose}){
@@ -24,8 +25,14 @@ function TeacherForm({open,onClose}){
     }
     const createTeacherHandler = async()=>{
         console.table(formData)
+        createTeacher(formData)
     }
-
+    // const searchChangeHandler= (name,value)=>{
+    //     console.log(value?.map(obj => obj.value))
+    //         formData[name] = value?.map(obj => obj.value) ?? []
+    //         setFormData(p=>({...p}))
+    //    }
+       const [ createTeacher, { isLoading: isCreateLoading} ] = useCreateTeacherMutation()
     return (
         <div>
             {console.log(formData)}
@@ -56,35 +63,6 @@ function TeacherForm({open,onClose}){
                             />    
                         ))
                     }
-                    {/* <Input
-                       {...batchInput.title }
-                       onChange={changeHandler}
-                    />
-                    <Input
-                
-                       {...batchInput.monthly_fee }
-                       onChange={changeHandler}
-                    />
-                     <Input
-                       {...batchInput.start_date }
-                       onChange={changeHandler}
-                    />
-                     <Input
-                       {...batchInput.end_date }
-                       onChange={changeHandler}
-                    />
-                     <Input
-                       {...batchInput.standard }
-                       onChange={changeHandler}
-                    />
-                     <Input
-                       {...batchInput.start_time }
-                       onChange={changeHandler}
-                    />
-                     <Input
-                       {...batchInput.end_time }
-                       onChange={changeHandler}
-                    /> */}
                 </form>
             </Modal>
         </div>
