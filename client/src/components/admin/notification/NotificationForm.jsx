@@ -44,13 +44,6 @@ function NotificationForm({show,onHide}) {
                         value={title}
                         onChange={(e)=>setTitle(e.target.value)}
                     />
-                    <SearchSelect
-                        label="Teachers"
-                        options={[{label:"Ravishankar",value:"1"}]}
-                        isMulti
-                        defaultValue={[{label:"Ravishankar",value:"1"}]}
-                        onChange={(e)=>console.log(e)}
-                    />
                 </form>
             </Modal>
         </div>
