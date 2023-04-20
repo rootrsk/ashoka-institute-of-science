@@ -11,6 +11,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import CoPresentIcon from '@mui/icons-material/CoPresent';
 import BurstModeIcon from '@mui/icons-material/BurstMode';
 import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList';
+import PeopleIcon from '@mui/icons-material/People';
 import { NavLink } from 'react-router-dom';
 function Sidebar() {
     const [open,setOpen] = useState(false)
@@ -50,6 +51,9 @@ function Sidebar() {
                     </NavLink>
                     <NavLink className="sidebar-it-wrapper" to='/admin/notification'>
                         <NotificationsActiveIcon className='sidebar-icon'  /> <span>Notifications</span>
+                    </NavLink>
+                    <NavLink className="sidebar-it-wrapper" to='/admin/user'>
+                        <PeopleIcon className='sidebar-icon'  /> <span>Users</span>
                     </NavLink>
                     
                     <NavLink to='/admin/account' className="sidebar-it-wrapper">

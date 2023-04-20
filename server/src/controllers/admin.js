@@ -3,7 +3,7 @@ const Batch = require('../models/batch')
 const Notification = require('../models/notification')
 const Subject = require('../models/subject')
 const Teacher = require('../models/teacher')
-
+const User = require('../models/user')
 const signupHandler = async(req,res,next)=>{
     try {
         const admin = await new Admin({
@@ -362,6 +362,21 @@ const getOptionData = async(req,res,next)=>{
     }
 
 }
+
+const getUser = async(req,res,next)=>{
+    try {
+        const users = await User.find({})
+        res.status(200).json({
+            users,
+            message: "Teachers fetched successfully"
+        })
+    } catch (error) {
+        res.status(500).json({
+            error: error.message,
+        })
+    }
+
+}
 module.exports = {
     signupHandler,
     loginHandler,
@@ -386,4 +401,6 @@ module.exports = {
     createBatch,
     updateBatch,
     deleteBatch,
+
+    getUser
 }

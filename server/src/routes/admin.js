@@ -25,6 +25,8 @@ const {
     createBatch,
     updateBatch,
     deleteBatch,
+
+    getUser
 } = require('../controllers/admin')
 
 
@@ -56,5 +58,6 @@ router.delete('/batch' ,adminAuth, deleteBatch)
 
 router.get('/option-data' ,adminAuth, getOptionData)
 
+router.get('/user' ,adminAuth, getUser)
 
 module.exports = router
