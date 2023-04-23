@@ -38,7 +38,7 @@ router.get('/',(req,res)=>{
     res.send({
         message: 'success',
         data: {
-            welcome: 'Welcome to Bhushan Train Api',
+            welcome: 'Api in Development for AIS',
             headers :req.useragent
         }
     })
