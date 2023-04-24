@@ -6,11 +6,6 @@ const batchSchema = new Schema({
         required:true,
         unique: true,
     },
-    type:{
-        type:String,
-        enum:['Compulsory','Additional','Optional'],
-        default:'Compulsory'
-    },
     start_time:{
         type: String,
         default:false,

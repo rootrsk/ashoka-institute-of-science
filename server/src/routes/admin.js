@@ -40,7 +40,6 @@ router.post('/notification', adminAuth, createNotification)
 router.patch('/notification', adminAuth, updateNotification)
 router.delete('/notification' ,adminAuth, deleteNotification)
 
-
 router.get('/subject', adminAuth, getSubject)
 router.post('/subject', adminAuth, createSubject)
 router.patch('/subject', adminAuth, updateSubject)
