@@ -168,6 +168,7 @@ const updateSubject = async(req,res,next)=>{
         })
         subject.updated_by = req.user._id
         await subject.save()
+        await Subject.findByIdAndUpdate(req.body._id,req.body)
         res.status(200).json({
             message: "Notification updated Successfully"
         })
@@ -233,7 +234,9 @@ const updateTeacher = async(req,res,next)=>{
             error:"No such Teacher found",
         })
         teacher.updated_by = req.user._id
+    
         await teacher.save()
+        await Teacher.findByIdAndUpdate(req.body._id,req.body)
         res.status(200).json({
             message: "Teacher updated Successfully"
         })
@@ -300,6 +303,7 @@ const updateBatch = async(req,res,next)=>{
         })
         batch.updated_by = req.user._id
         await batch.save()
+        await Batch.findByIdAndUpdate(req.body._id,req.body)
         res.status(200).json({
             message: "Batch updated Successfully"
         })
