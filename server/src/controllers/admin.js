@@ -270,7 +270,7 @@ const getBatch = async(req,res,next)=>{
         const batches = await Batch.find({}).populate("subjects teachers")
         res.status(200).json({
             batches,
-            message: "Teachers fetched successfully"
+            message: "Batch fetched successfully"
         })
     } catch (error) {
         res.status(500).json({

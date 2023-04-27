@@ -20,7 +20,7 @@ const INITIAL_STATE = {
     subjects:[]
 }
 
-function AddBatch({open,onClose}) {
+function AddBatchForm({show,onHide}) {
     const [loading,setLoading] = useState(false)
     const [formData,setFormData] = useState({...INITIAL_STATE});
     const [optionData,setOptionData] = useState({teachers: [],subjects:[]})
@@ -59,8 +59,8 @@ function AddBatch({open,onClose}) {
         <div>
             {console.log(optionDataResponse)}
             <Modal
-                open={open}
-                onClose={()=>onClose(false)}
+                open={show}
+                onClose={()=>onHide(false)}
                 title="Add Batch"
                 size="md"
                 footer={
@@ -134,4 +134,4 @@ function AddBatch({open,onClose}) {
     )
 }
 
-export default AddBatch
+export default AddBatchForm
