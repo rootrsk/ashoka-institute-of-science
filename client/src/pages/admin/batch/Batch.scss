@@ -1,0 +1,46 @@
+.batchs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.batch-table{
+    width: 100%;
+    border: 1px solid #000;
+    font-family: Poppins;
+    .table-icons{
+        svg:first-child{
+            color: rgb(0, 56, 135);
+        }
+        .MuiIconButton-sizeMedium{
+            margin-right: 7px;
+            background: linear-gradient(145deg, #e6e6e6, #ffffff) !important;
+            box-shadow:  8px 8px 16px #dedede,-8px -8px 16px #ffffff !important;
+        }
+    }
+    th,td{
+        padding: 5px 10px;
+        // border: 1px solid #000;
+        
+    }
+    tr{
+        background: #ffffff;
+        box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+    }
+}
+
+.view{
+    padding: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    svg:first-child{
+        color: rgb(0, 56, 135);
+    }
+    .MuiIconButton-sizeMedium{
+        margin-right: 7px;
+        background: linear-gradient(145deg, #e6e6e6, #ffffff) !important;
+        box-shadow:  8px 8px 16px #dedede,-8px -8px 16px #ffffff !important;
+    }
+}

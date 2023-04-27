@@ -7,11 +7,12 @@ import { useState } from 'react';
 import { useCreateTeacherMutation } from 'api/admin/teacherApi';
 
 const INITIAL_STATE = {  
-    userName:"",
+    full_name:"",
     email:"",
+    contact:""
 }
 
-function TeacherForm({open,onClose}){
+function TeacherForm({show,onHide}){
     const [loading,setLoading] = useState(false)
     const [formData,setFormData] = useState({...INITIAL_STATE})
 
@@ -37,8 +38,8 @@ function TeacherForm({open,onClose}){
         <div>
             {console.log(formData)}
             <Modal
-                open={open}
-                onClose={()=>onClose(false)}
+                open={show}
+                onClose={()=>onHide(false)}
                 title="Add Teacher"
                 size="md"
                 footer={
@@ -53,7 +54,7 @@ function TeacherForm({open,onClose}){
                     </>
                 }
             >
-                <form className="notification_form">
+                <form className="teacher_form">
                     {
                         Object.entries(teacherInput)?.map(([k,v])=>(
                             <Input

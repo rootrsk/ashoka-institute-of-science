@@ -17,7 +17,7 @@ const INITIAL_STATE = {
 }
 
 
-function SubjectForm({open,onClose}){
+function SubjectForm({show,onHide}){
     const [loading,setLoading] = useState(false)
     const [formData,setFormData] = useState({...INITIAL_STATE})
     
@@ -47,8 +47,8 @@ return (
     <div>
         {/* {console.log(optionDataResponse)} */}
         <Modal
-            open={open}
-            onClose={()=>onClose(false)}
+            open={show}
+            onClose={()=>onHide(false)}
             title="Add Subject"
             size="md"
             footer={

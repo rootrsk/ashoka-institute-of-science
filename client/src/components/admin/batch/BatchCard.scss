@@ -1,0 +1,94 @@
+.batch-card{
+    width: 230px;
+    //height: 300px;
+    border-radius: 6px;
+   
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe,-20px -20px 60px #ffffff;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #cccccc,
+             -20px -20px 60px #ffffff;
+    padding: 10px;
+    font-family: Poppins;
+    .batch-card-header{
+        .profile-pic-wrapper{
+            display: flex;
+            justify-content: center;
+        }
+        img{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: auto;
+            // border-radius: 6px;
+        }
+    }
+    .title{
+       // border: 1px solid hsl(217, 23%, 45%);
+        //border-radius: 70px;
+        font-weight: 700;
+        font-size: 18px;
+        color: #000;
+    }
+    .batch-card-details{
+        margin-top: 5px;
+        text-align: center;
+    }
+    .batch_teacher{
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        font-size: 10px;
+        flex-wrap: wrap ;
+        font-family: cursive;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #333;
+        span{
+            padding: 5px;
+            border: 1px solid #b5cade;
+           border-radius: 50px;
+            
+
+        }}
+}
+
+.batch-card-list{
+    width: 350px;
+    height: 70px;
+    border-radius: 6px;
+    border-radius: 11px;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+    padding: 10px;
+    font-family: Poppins;
+    display: flex;
+    align-items: center;
+    .batch-card-header{
+        .profile-pic-wrapper{
+            display: flex;
+            justify-content: center;
+        }
+        img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: auto;
+            // border-radius: 6px;
+        }
+    }
+    .title{
+        font-weight: 700;
+        font-size: 18px;
+        color: #000;
+    }
+    
+
+    
+    .batch-card-details{
+        padding-left: 20px;
+        // text-align: center;
+    }
+}
