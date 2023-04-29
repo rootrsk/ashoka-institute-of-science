@@ -75,7 +75,8 @@ userSchema.methods.genAuthToken =  function () {
 userSchema.methods.emailVerificationToken = async function () {
     const user = this
     const token = jwt.sign({
-        _id: user._id.toString()
+        _id: user._id.toString(),
+        purpose: "email_verification"
     }, process.env.JWT_SECRET)
     return token
 }
