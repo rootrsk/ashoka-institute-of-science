@@ -409,7 +409,6 @@ const getUser = async (req, res, next) => {
 module.exports = {
     signupHandler,
     loginHandler,
-
     getNotification,
     updateNotification,
     createNotification,
@@ -430,7 +429,5 @@ module.exports = {
     createBatch,
     updateBatch,
     deleteBatch,
-    getById,
-
     getUser
 }
