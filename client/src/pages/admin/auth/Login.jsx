@@ -27,6 +27,7 @@ function Login() {
         if(data?.token)dispatch(authenticateUser(data))
     }
     useEffect(()=>{
+        if(user?.email?.value && user?.password?.value)loginHandler()
     },[])
     return (
         <div className='login_page'>
@@ -55,9 +56,6 @@ function Login() {
                             Login
                         </Button>
                     }
-
-                    
-                    
                 </div>
             </div>
         </div>
