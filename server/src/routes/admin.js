@@ -25,6 +25,7 @@ const {
     createBatch,
     updateBatch,
     deleteBatch,
+    getById,
 
     getUser
 } = require('../controllers/admin')
