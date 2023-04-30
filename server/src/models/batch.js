@@ -23,7 +23,13 @@ const batchSchema = new Schema({
     monthly_fee:{
         type: Number,
     },
-
+    standard:{
+        type: String,
+    },
+    created_by:{
+        type: Schema.Types.ObjectId,
+        ref:"Admin"
+    },
     updated_by:{
         type: Schema.Types.ObjectId,
         ref:"Admin"
