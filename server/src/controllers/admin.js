@@ -4,6 +4,8 @@ const Notification = require('../models/notification')
 const Subject = require('../models/subject')
 const Teacher = require('../models/teacher')
 const User = require('../models/user')
+
+// from now on we need import functilities
 const signupHandler = async (req, res, next) => {
     try {
         const admin = await new Admin({
