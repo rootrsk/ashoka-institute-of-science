@@ -128,7 +128,6 @@ const deleteNotification = async (req, res, next) => {
 
 }
 
-
 const getSubject = async (req, res, next) => {
     try {
         const subjects = await Subject.find({})
