@@ -10,6 +10,7 @@ import Teacher from 'pages/admin/teacher/Teacher'
 import Subject from 'pages/admin/subject/Subject'
 import Slides from 'pages/admin/slides/Slides'
 import User from 'pages/admin/user/User'
+import BatchDetails from 'pages/admin/batch/BatchDetails'
 function AdminRoutes() {
     const admin = useSelector(state=>state?.adminAuth?.user)
     console.log(admin)
@@ -20,6 +21,7 @@ function AdminRoutes() {
                 <Route path='/dashboard' element={<Dashboard />} />
                 <Route path='/notification' element={<Notification />} />
                 <Route path='/batch' element={<Batch />} />
+                <Route path='/batch/:title' element={<BatchDetails />} />
                 <Route path='/teacher' element={<Teacher />} />
                 <Route path='/subject' element={<Subject />} />
                 <Route path='/slides' element={<Slides />} />

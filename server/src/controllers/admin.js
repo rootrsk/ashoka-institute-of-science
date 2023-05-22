@@ -270,8 +270,8 @@ const deleteTeacher = async (req, res, next) => {
 
 const getBatch = async (req, res, next) => {
     try {
-        if(req.query._id){
-            const batch = await Batch.findById(req.query._id).populate("subjects teachers");
+        if(req.query.title){
+            const batch = await Batch.findOne({title:req.query.title}).populate("subjects teachers");
             if(!batch){
                 return res.status(400).json({
                     error:"No batch found"

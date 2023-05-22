@@ -15,10 +15,12 @@ import GridOnIcon from '@mui/icons-material/GridOn';
 import { IconButton } from '@mui/material';
 import CalendarViewMonthIcon from '@mui/icons-material/CalendarViewMonth';
 import BatchCardListView from 'components/admin/batch/BatchCardListView';
+import { useNavigate } from 'react-router-dom';
 
 
 
 function Batch() {
+    const navigate = useNavigate()
     const [batchs,setBatchs] = useState([])
     const [view,setView] = useState("table")
     const { data:getBatchResponse, isLoading } = useGetBatchQuery()
@@ -98,7 +100,7 @@ function Batch() {
                                             <IconButton variant='outlined'>
                                                 <EditIcon />
                                             </IconButton> 
-                                            <IconButton variant='outlined'>
+                                            <IconButton variant='outlined' onClick={()=>navigate("/admin/batch/"+batch.title)}>
                                                 <VisibilityIcon />
                                             </IconButton> 
                                         </td>
